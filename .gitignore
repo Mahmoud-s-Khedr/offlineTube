@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.Python
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Installer Logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit Test / Coverage Reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Editors / IDEs
+.idea/
+*.iml
+.vscode/
+settings.json
+tasks.json
+launch.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+*.bak
+~$*
+
+# Logs
+logs/
+*.log
+
+# Flask
+instance/
+
+# Django
+*.sqlite3
+
+# Scrapy
+.scrapy/
+
+# Documentation
+docs/_build/
+
+# Profiling Data
+*.prof
+*.lprof
+
+# Celery
+celerybeat-schedule
+
+# Jinja2
+*.jinja2c
+
+# Type Checkers
+.pyre/
+
+# Local Environment & Secrets
+*.local
+*.env
+downloaded_videos.txt
+
