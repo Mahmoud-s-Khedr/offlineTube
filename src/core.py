@@ -2,13 +2,15 @@ import yt_dlp
 
 
 def check_url(url):
-    if 'https://www.youtube.com/watch?v=' in url or 'https://youtu.be/' in url:
+    print(url)
+    if 'youtube.com/watch?v=' in url or 'youtu.be/' in url:
         return 'video'
-    elif 'https://www.youtube.com/playlist?list=' in url:
+    elif 'youtube.com/playlist?list=' in url:
         return 'playlist'
-    elif 'https://www.youtube.com/@' in url:
+    elif 'youtube.com/@' in url:
         return 'channel'
     else:
+        print("Error in URL")
         return 'error'
 
 def youtube_video_url_cleaner(url):
@@ -77,7 +79,7 @@ def download_manager(url):
         type = 'channel'
         downloader(url)
     else:
-        return "Error"
+         print("Error unexpected")
     
 
 url = input("Enter URL: ")
