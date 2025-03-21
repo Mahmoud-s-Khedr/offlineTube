@@ -58,7 +58,7 @@ def downloader(url):
             video_format = f"bestvideo[height<={quality_choice}]+bestaudio/best"
         
         ydl_opts['format'] = video_format
-        #ydl_opts['merge_output_format'] = 'mp4'  # Ensure MP4 format
+        ydl_opts['merge_output_format'] = 'mp4'  # Ensure MP4 format
 
     # Download with yt-dlp
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
