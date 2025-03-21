@@ -21,13 +21,7 @@ def youtube_video_url_cleaner(url):
         ret += i
     return ret
 
-url = ""
-audio_only = ""
-quality_choice = ""
-subtitle = ""
-type = ""
-
-def downloader(url):
+def downloader(url, quality_choice, audio_only, subtitle, type):
 
     # Define options based on user selection
     ydl_opts = {
@@ -64,20 +58,17 @@ def downloader(url):
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
-def download_manager(url):
+def download_manager(url, quality_choice, audio_only, subtitle):
     if check_url(url) == 'video':
         url = youtube_video_url_cleaner(url)
         print('video: ', url)
-        type = 'video'
-        downloader(url)
+        downloader(url, quality_choice, audio_only, subtitle, 'video')
     elif check_url(url) == 'playlist':
         print('playlist: ', url)
-        type = 'playlist'
-        downloader(url)
+        downloader(url, quality_choice, audio_only, subtitle, 'playlist')
     elif check_url(url) == 'channel':
         print('channel: ', url)
-        type = 'channel'
-        downloader(url)
+        downloader(url, quality_choice, audio_only, subtitle, 'channel')
     else:
          print("Error unexpected")
     
@@ -86,4 +77,4 @@ url = input("Enter URL: ")
 quality_choice = input("Enter max resolution: ")
 audio_only = input("Audio only (y/n): ")
 subtitle = input("Subtitle (y/n): ")
-download_manager(url)
+download_manager(url, quality_choice, audio_only, subtitle)
